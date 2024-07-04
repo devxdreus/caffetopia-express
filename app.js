@@ -18,7 +18,7 @@ app.use(
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use('/api', routes);
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use('/api/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.listen(process.env.PORT, () => {
     console.log(`App listen on http://localhost:${process.env.PORT}`);
