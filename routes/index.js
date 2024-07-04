@@ -2,37 +2,38 @@ const express = require('express');
 const router = express.Router();
 const auth = require('../middlewares/auth');
 const {
-  register,
-  login,
-  logout,
-  refreshToken,
+    register,
+    login,
+    logout,
+    refreshToken,
 } = require('../controllers/authenticationController');
 const { showProfile } = require('../controllers/userController');
 const {
-  getProducts,
-  getProductsByCategory,
-  getProductById,
-  createProduct,
-  updateProduct,
-  deleteProduct,
-  restoreProduct,
+    getProducts,
+    getProductsByCategory,
+    getProductById,
+    createProduct,
+    updateProduct,
+    deleteProduct,
+    restoreProduct,
 } = require('../controllers/productController');
 const {
-  getCategories,
-  createCategory,
-  getDetailCategory,
-  updateCategory,
-  deleteCategory,
-  restoreCategory,
+    getCategories,
+    createCategory,
+    getDetailCategory,
+    updateCategory,
+    deleteCategory,
+    restoreCategory,
 } = require('../controllers/categoryController');
 const {
-  createOrder,
-  getOrders,
-  getOrdersById,
+    createOrder,
+    getOrders,
+    getOrdersById,
+    updateOrderStatus,
 } = require('../controllers/orderController');
 
 router.get('/', (req, res) => {
-  res.send('Home');
+    res.send('Home');
 });
 
 router.post('/register', register);
@@ -44,7 +45,7 @@ router.get('/token', refreshToken);
 router.get('/profile', auth, showProfile);
 
 router.get('/dashboard', auth, (req, res) => {
-  res.sendStatus(200);
+    res.sendStatus(200);
 });
 
 router.get('/products', getProducts);
@@ -65,5 +66,6 @@ router.post('/categories/restore/:id', restoreCategory);
 router.post('/checkout', createOrder);
 router.get('/orders', getOrders);
 router.get('/orders/:id', getOrdersById);
+router.put('/orders/:id/status', updateOrderStatus);
 
 module.exports = router;
