@@ -10,12 +10,7 @@ const config = require(__dirname + '/../config/config.js')[env];
 const db = {};
 
 let sequelize;
-sequelize = new Sequelize(
-    config.database,
-    config.username,
-    config.password,
-    config
-);
+sequelize = new Sequelize('caffetopia_dev', 'root', 'root', config);
 
 fs.readdirSync(__dirname)
     .filter((file) => {
