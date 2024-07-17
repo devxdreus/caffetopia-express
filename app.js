@@ -10,7 +10,7 @@ const path = require('path');
 
 app.use(
     cors({
-        origin: ['*'],
+        origin: ['https://coffetopia.my.id'],
         methods: ['POST', 'GET', 'PUT', 'DELETE'],
         credentials: true,
     })
