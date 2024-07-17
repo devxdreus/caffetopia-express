@@ -10,7 +10,7 @@ const path = require('path');
 
 app.use(
     cors({
-        origin: [process.env.FRONTEND_HOST],
+        origin: ['*'],
         methods: ['POST', 'GET', 'PUT', 'DELETE'],
         credentials: true,
     })
