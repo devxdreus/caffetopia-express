@@ -8,7 +8,18 @@ const routes = require('./routes');
 const cookieParser = require('cookie-parser');
 const path = require('path');
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      'http://localhost:3000',
+      'http://8.215.11.16',
+      'http://coffetopia.my.id',
+      'https://coffetopia.my.id',
+      'http://coffetopia.xyz',
+    ],
+  })
+);
+
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use('/api', routes);
