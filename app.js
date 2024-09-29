@@ -17,6 +17,7 @@ app.use(
       'https://coffetopia.my.id',
       'http://coffetopia.xyz',
     ],
+    credentials: true,
   })
 );
 
